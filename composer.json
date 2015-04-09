@@ -1,0 +1,17 @@
+{
+  "name" : "dollyaswin/zf2-user-skeleton",
+  "description" : "Skeleton User Application for ZF2",
+  "require" : {
+    "php" : ">=5.3.3",
+    "zendframework/zendframework" : "2.3.*",
+  },
+  "license" : "BSD-3-Clause",
+  "keywords" : [
+  	"framework",
+  	"zf2",
+  ],
+  "authors" : [ {
+    "name" : "Dolly Aswin",
+    "email" : "dolly.aswin@gmail.com"
+  } ],
+}
