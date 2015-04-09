@@ -4,6 +4,7 @@ config/autoload/zenddevelopertools.local.php
 config/development.config.php
 config/autoload/global.php
 config/autoload/local.php
+config/autoload/doctrine.orm.local.php
 data/proxies/*
 .vagrant
 composer.phar
