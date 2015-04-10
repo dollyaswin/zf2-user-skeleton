@@ -25,7 +25,7 @@ class UserResource extends AbstractResourceListener
     public function __construct(UserService $userService)
     {
         $this->userService = $userService;
-    } 
+    }
     
     /**
      * Create a resource
@@ -44,11 +44,11 @@ class UserResource extends AbstractResourceListener
             $form   = $this->getUserService()->getRegisterForm();
             // compose error response
             $return = new ApiProblem(
-                        400,
-                        'The field you sent was malformed',
-                        '/apigility/documentation/request#malformed',
-                        'Malformed request',
-                        array('messages' => $form->getMessages())
+                400,
+                'The field you sent was malformed',
+                '/api/v1/documentation/request#malformed',
+                'Malformed request',
+                array('messages' => $form->getMessages())
             );
         } else {
             // extract data from User Entity to array
@@ -151,6 +151,6 @@ class UserResource extends AbstractResourceListener
      */
     public function getUserService()
     {
-        return $this->userService;   
+        return $this->userService;
     }
 }
