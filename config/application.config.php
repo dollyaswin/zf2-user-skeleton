@@ -13,6 +13,19 @@ return array(
         'ZfcUser',
         'ZfcUserDoctrineORM',
         'ZF\\DevelopmentMode',
+        'ZF\\Apigility',
+        'ZF\\Apigility\\Provider',
+        'AssetManager',
+        'ZF\\ApiProblem',
+        'ZF\\MvcAuth',
+        'ZF\\OAuth2',
+        'ZF\\Hal',
+        'ZF\\ContentNegotiation',
+        'ZF\\ContentValidation',
+        'ZF\\Rest',
+        'ZF\\Rpc',
+        'ZF\\Versioning',
+        'User'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

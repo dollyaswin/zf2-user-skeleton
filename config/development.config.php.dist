@@ -8,6 +8,8 @@ return array(
     // Development time modules
     'modules' => array(
         'ZendDeveloperTools',
+        'ZF\Apigility\Admin',
+        'ZF\Configuration',
     ),
 //     // development time configuration globbing
 //     'module_listener_options' => array(
