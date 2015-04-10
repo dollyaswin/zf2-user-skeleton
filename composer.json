@@ -8,6 +8,10 @@
     "zf-commons/zfc-user" : "=1.2.2",
     "doctrine/doctrine-orm-module" : "=0.8.0"
   },
+  "require-dev": {
+    "zendframework/zend-developer-tools": "dev-master",
+  	"zfcampus/zf-development-mode" : "2.0.*"
+  },
   "license" : "BSD-3-Clause",
   "keywords" : [
   	"framework",
