@@ -26,7 +26,6 @@ return array(
         'ZF\\Rpc',
         'ZF\\Versioning',
         'User',
-        'Api'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

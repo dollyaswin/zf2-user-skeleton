@@ -6,6 +6,6 @@ class UserResourceFactory
     public function __invoke($services)
     {
         $userService = $services->get('zfcuser_user_service');
-        return new UserResource($userService);
+        return new UserResource($services, $userService);
     }
 }

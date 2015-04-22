@@ -3,10 +3,12 @@ namespace User\V1\Rest\User;
 
 use ZF\ApiProblem\ApiProblem;
 use ZF\Rest\AbstractResourceListener;
-use ZfcUser\Service\User as UserService;
+use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\Hydrator;
 use Zend\Stdlib\Hydrator\Aggregate\HydrateEvent;
 use Zend\Form\Form;
+use ZfcUser\Service\User as UserService;
+use ZfcUser\Entity\User  as ZfcUserEntity;
 
 class UserResource extends AbstractResourceListener
 {
@@ -22,9 +24,10 @@ class UserResource extends AbstractResourceListener
      * 
      * @param UserService $userService
      */
-    public function __construct(UserService $userService)
+    public function __construct(ServiceLocatorInterface $serviceLocator, UserService $userService)
     {
         $this->userService = $userService;
+        $this->serviceLocator = $serviceLocator;
     }
     
     /**
@@ -51,15 +54,7 @@ class UserResource extends AbstractResourceListener
                 array('messages' => $form->getMessages())
             );
         } else {
-            // extract data from User Entity to array
-            $hydrator = new Hydrator\ClassMethods();
-            // filter password field
-            $hydrator->addFilter(
-                'password',
-                new Hydrator\Filter\MethodMatchFilter('getPassword'),
-                Hydrator\Filter\FilterComposite::CONDITION_AND
-            );
-            $return = $hydrator->extract($user);
+            $return = $this->hydrate($user);
         }
         
         return $return;
@@ -95,7 +90,14 @@ class UserResource extends AbstractResourceListener
      */
     public function fetch($id)
     {
-        return new ApiProblem(405, 'The GET method has not been defined for individual resources');
+        $authId = $this->getIdentity()->getName();
+        if ($id !== $authId) {
+            return new ApiProblem(403, "You don't have access for this resource");
+        }
+        
+        $em   = $this->serviceLocator->get('zfcuser_doctrine_em');
+        $user = $em->getRepository('ZfcUserDoctrineORM\Entity\User')->findOneBy(['username' => $authId]);
+        return $this->hydrate($user);
     }
 
     /**
@@ -152,5 +154,24 @@ class UserResource extends AbstractResourceListener
     public function getUserService()
     {
         return $this->userService;
+    }
+    
+    /**
+     * Hydrate User Object
+     * 
+     * @param  ZfcUser\Entity\User $user
+     * @return array
+     */
+    protected function hydrate(ZfcUserEntity $user)
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        // filter password field
+        $hydrator->addFilter(
+            'password',
+            new Hydrator\Filter\MethodMatchFilter('getPassword'),
+            Hydrator\Filter\FilterComposite::CONDITION_AND
+        );
+        
+        return $hydrator->extract($user);
     }
 }
