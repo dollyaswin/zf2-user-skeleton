@@ -2,6 +2,7 @@
 namespace User;
 
 use ZF\Apigility\Provider\ApigilityProviderInterface;
+use ZF\MvcAuth\MvcAuthEvent;
 use Zend\Mvc\MvcEvent;
 
 class Module implements ApigilityProviderInterface
@@ -12,16 +13,41 @@ class Module implements ApigilityProviderInterface
         $services = $e->getApplication()->getServiceManager();
         $eventManager->attach(
             MvcEvent::EVENT_ROUTE,
-            array($this, 'protectAuthorization'),
+            array($this, 'protectPages'),
             -100
         );
+        
+        $eventManager->attach(
+            MvcAuthEvent::EVENT_AUTHORIZATION_POST,
+            array($this, 'protectEntity'),
+            100
+        );
+        
+        // set username as identifier
+        $halPlugin = $services->get('ViewHelperManager')->get('Hal');
+        $halPlugin->getEventManager()->attach('renderEntity', function ($e) {
+            $entity = $e->getParam('entity');
+            foreach ($entity->getLinks() as $link) {
+                $link->setRouteParams(['username' => $entity->entity['username']]);
+            }
+        });
     }
     
+    /**
+     * Get Module Configuration
+     * 
+     * @return array
+     */
     public function getConfig()
     {
         return include __DIR__ . '/../../config/module.config.php';
     }
 
+    /**
+     * Get Autoloader Configuration
+     * 
+     * @return multitype:multitype:multitype:string
+     */
     public function getAutoloaderConfig()
     {
         return array(
@@ -34,17 +60,18 @@ class Module implements ApigilityProviderInterface
     }
     
     /**
-     * Protect Page Need Authorized
+     * Protect Pages Authorization eeded
+     * ex: /oauth/authorize, /oauth/receivecode
      * 
-     * @param MvcEvent $e
+     * @param  MvcEvent $e
+     * @return void
      */
-    public function protectAuthorization(MvcEvent $e)
+    public function protectPages(MvcEvent $e)
     {
         $match = $e->getRouteMatch();
         $services   = $e->getApplication()->getServiceManager();
         $controller = $match->getParam('controller');
         $action     = $match->getParam('action'); // 'authorize'
-    
         if ($controller === 'ZF\OAuth2\Controller\Auth' &&
             in_array($action, ['authorize', 'receiveCode'])
         ) {
@@ -56,6 +83,24 @@ class Module implements ApigilityProviderInterface
                 $match->setParam('controller', 'zfcuser');
                 $match->setParam('action', 'login');
             }
+        }
+    }
+    
+    /**
+     * Protect Entity From Forbidden Request
+     * 
+     * @param MvcAuthEvent $e
+     * @param void
+     */
+    public function protectEntity(MvcAuthEvent $e)
+    {
+        $mvcEvent = $e->getMvcEvent();
+        $username = $mvcEvent->getRouteMatch()->getParam('username', null);
+        $identity = $e->getIdentity()->getName();
+        if ($username !== $identity) {
+            $response = $mvcEvent->getResponse();
+            $response->setStatusCode(403);
+            $response->setReasonPhrase('Forbidden');
         }
     }
 }

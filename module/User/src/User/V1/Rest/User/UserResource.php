@@ -1,14 +1,13 @@
 <?php
 namespace User\V1\Rest\User;
 
-use ZF\ApiProblem\ApiProblem;
-use ZF\Rest\AbstractResourceListener;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\Hydrator;
-use Zend\Stdlib\Hydrator\Aggregate\HydrateEvent;
-use Zend\Form\Form;
+use ZF\ApiProblem\ApiProblem;
+use ZF\Rest\AbstractResourceListener;
 use ZfcUser\Service\User as UserService;
 use ZfcUser\Entity\User  as ZfcUserEntity;
+use Doctrine\ORM\EntityManagerInterface;
 
 class UserResource extends AbstractResourceListener
 {
@@ -21,13 +20,16 @@ class UserResource extends AbstractResourceListener
     
     /**
      * Constructor
-     * 
-     * @param UserService $userService
+     *
+     * @param ServiceLocator $sl
+     * @param UserService    $userService
+     * @param EntityManager  $em
      */
-    public function __construct(ServiceLocatorInterface $serviceLocator, UserService $userService)
+    public function __construct(ServiceLocatorInterface $sl, UserService $userService, EntityManagerInterface $em)
     {
-        $this->userService = $userService;
-        $this->serviceLocator = $serviceLocator;
+        $this->userService    = $userService;
+        $this->serviceLocator = $sl;
+        $this->entityManager  = $em;
     }
     
     /**
@@ -90,13 +92,13 @@ class UserResource extends AbstractResourceListener
      */
     public function fetch($id)
     {
-        $authId = $this->getIdentity()->getName();
-        if ($id !== $authId) {
+        if (!$this->isAuthorize($id)) {
             return new ApiProblem(403, "You don't have access for this resource");
         }
         
-        $em   = $this->serviceLocator->get('zfcuser_doctrine_em');
-        $user = $em->getRepository('ZfcUserDoctrineORM\Entity\User')->findOneBy(['username' => $authId]);
+        $user = $this->entityManager->getRepository('ZfcUserDoctrineORM\Entity\User')
+                    ->findOneBy(['username' => $id]);
+        
         return $this->hydrate($user);
     }
 
@@ -143,7 +145,7 @@ class UserResource extends AbstractResourceListener
      */
     public function update($id, $data)
     {
-        return new ApiProblem(405, 'The PUT method has not been defined for individual resources');
+        return new ApiProblem(405, 'The PUT method has not been defined for collections');
     }
     
     /**
@@ -164,7 +166,7 @@ class UserResource extends AbstractResourceListener
      */
     protected function hydrate(ZfcUserEntity $user)
     {
-        $hydrator = new Hydrator\ClassMethods();
+        $hydrator = $this->getUserService()->getFormHydrator();
         // filter password field
         $hydrator->addFilter(
             'password',

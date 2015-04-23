@@ -5,7 +5,7 @@ return array(
             'user.rest.user' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/api/v1/user[/:user_id]',
+                    'route' => '/api/v1/user[/:username]',
                     'defaults' => array(
                         'controller' => 'User\\V1\\Rest\\User\\Controller',
                     ),
@@ -27,7 +27,7 @@ return array(
         'User\\V1\\Rest\\User\\Controller' => array(
             'listener' => 'User\\V1\\Rest\\User\\UserResource',
             'route_name' => 'user.rest.user',
-            'route_identifier_name' => 'user_id',
+            'route_identifier_name' => 'username',
             'collection_name' => 'User',
             'entity_http_methods' => array(
                 0 => 'GET',
@@ -42,7 +42,8 @@ return array(
             'collection_query_whitelist' => array(),
             'page_size' => 25,
             'page_size_param' => null,
-            'entity_class' => 'User\\V1\\Rest\\User\\UserEntity',
+//             'entity_class' => 'User\\V1\\Rest\\User\\UserEntity',
+            'entity_class' => 'ZfcUserDoctrineORM\Entity\User',
             'collection_class' => 'User\\V1\\Rest\\User\\UserCollection',
             'service_name' => 'User',
         ),
@@ -68,15 +69,15 @@ return array(
     'zf-hal' => array(
         'metadata_map' => array(
             'User\\V1\\Rest\\User\\UserEntity' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'username',
                 'route_name' => 'user.rest.user',
-                'route_identifier_name' => 'user_id',
+                'route_identifier_name' => 'username',
                 'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
             ),
             'User\\V1\\Rest\\User\\UserCollection' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'username',
                 'route_name' => 'user.rest.user',
-                'route_identifier_name' => 'user_id',
+                'route_identifier_name' => 'username',
                 'is_collection' => true,
             ),
         ),
