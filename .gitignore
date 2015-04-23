@@ -2,6 +2,7 @@ vendor
 puphpet/config.yaml
 config/autoload/zenddevelopertools.local.php
 config/development.config.php
+config/autoload/*.global.php
 config/autoload/global.php
 config/autoload/local.php
 config/autoload/doctrine.orm.local.php
