@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a2cec9637339c1e9745bb96d83ea92d",
+    "hash": "66bb4623a8202d0d16df414f98e61cac",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
-            "version": "v1.6",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bshaffer/oauth2-server-php.git",
-                "reference": "7b083b76673d25e3522a579ec7566603da4b9132"
+                "reference": "8878e192dcd3abb48d92b69a5d2cf75bcda4eb72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bshaffer/oauth2-server-php/zipball/7b083b76673d25e3522a579ec7566603da4b9132",
-                "reference": "7b083b76673d25e3522a579ec7566603da4b9132",
+                "url": "https://api.github.com/repos/bshaffer/oauth2-server-php/zipball/8878e192dcd3abb48d92b69a5d2cf75bcda4eb72",
+                "reference": "8878e192dcd3abb48d92b69a5d2cf75bcda4eb72",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "oauth",
                 "oauth2"
             ],
-            "time": "2015-01-16 22:43:04"
+            "time": "2015-04-24 03:00:33"
         },
         {
             "name": "doctrine/annotations",
@@ -1064,16 +1064,16 @@
         },
         {
             "name": "zendframework/zendframework",
-            "version": "2.3.7",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zf2.git",
-                "reference": "a1aae5fdd27a422beb32c56ddf5a197654a0f94a"
+                "reference": "628b809fcadcd326f2074a9815e5b1fce57077ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/a1aae5fdd27a422beb32c56ddf5a197654a0f94a",
-                "reference": "a1aae5fdd27a422beb32c56ddf5a197654a0f94a",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/628b809fcadcd326f2074a9815e5b1fce57077ef",
+                "reference": "628b809fcadcd326f2074a9815e5b1fce57077ef",
                 "shasum": ""
             },
             "require": {
@@ -1134,14 +1134,13 @@
                 "zendframework/zend-xmlrpc": "self.version"
             },
             "require-dev": {
-                "doctrine/annotations": ">=1.0",
-                "fabpot/php-cs-fixer": "1.*",
-                "ircmaxell/random-lib": "dev-master",
-                "ircmaxell/security-lib": "dev-master",
-                "mikey179/vfsstream": "1.2.*",
-                "phpunit/phpunit": "3.7.*",
-                "satooshi/php-coveralls": "dev-master",
-                "sebastianbergmann/phpcov": "1.1.0"
+                "doctrine/annotations": "~1.0",
+                "fabpot/php-cs-fixer": "~1.0",
+                "ircmaxell/random-lib": "~1.1",
+                "mikey179/vfsstream": "~1.2",
+                "phpunit/phpcov": "~2.0",
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "dev-master"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine Annotations >=1.0 for annotation features",
@@ -1164,8 +1163,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Zend\\": "library/"
+                "psr-4": {
+                    "Zend\\": "library/Zend/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1178,7 +1177,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2015-03-12 16:55:53"
+            "time": "2015-03-31 15:39:14"
         },
         {
             "name": "zendframework/zendxml",
@@ -1472,16 +1471,16 @@
         },
         {
             "name": "zfcampus/zf-apigility",
-            "version": "1.0.3",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-apigility.git",
-                "reference": "321696734e7e9fddfa0f172aebbdf82d4fcbe0dd"
+                "reference": "e3887fffae2e456fc86eddf4f97599df3099a423"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-apigility/zipball/321696734e7e9fddfa0f172aebbdf82d4fcbe0dd",
-                "reference": "321696734e7e9fddfa0f172aebbdf82d4fcbe0dd",
+                "url": "https://api.github.com/repos/zfcampus/zf-apigility/zipball/e3887fffae2e456fc86eddf4f97599df3099a423",
+                "reference": "e3887fffae2e456fc86eddf4f97599df3099a423",
                 "shasum": ""
             },
             "require": {
@@ -1537,7 +1536,68 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2014-08-18 16:22:39"
+            "time": "2014-06-04 15:10:24"
+        },
+        {
+            "name": "zfcampus/zf-apigility-documentation",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zfcampus/zf-apigility-documentation.git",
+                "reference": "e0e4f10a2f5f251e5d7691ec1c14a02039cf8f95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zfcampus/zf-apigility-documentation/zipball/e0e4f10a2f5f251e5d7691ec1c14a02039cf8f95",
+                "reference": "e0e4f10a2f5f251e5d7691ec1c14a02039cf8f95",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-modulemanager": "~2.3",
+                "zendframework/zend-mvc": "~2.3",
+                "zendframework/zend-servicemanager": "~2.3",
+                "zendframework/zend-view": "~2.3",
+                "zfcampus/zf-apigility-provider": "~1.0",
+                "zfcampus/zf-configuration": "~1.0",
+                "zfcampus/zf-content-negotiation": "~1.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "*@dev",
+                "phpunit/phpunit": "3.7.*",
+                "zendframework/zend-loader": "~2.3",
+                "zendframework/zend-stdlib": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev",
+                    "dev-develop": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZF\\Apigility\\Documentation\\": "src/",
+                    "ZFTest\\Apigility\\Documentation\\": "test/"
+                },
+                "classmap": [
+                    "Module.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Apigility API documentation module",
+            "homepage": "http://apigility.org/",
+            "keywords": [
+                "apigiltiy",
+                "documentation",
+                "module",
+                "zend",
+                "zf2"
+            ],
+            "time": "2015-04-20 20:16:11"
         },
         {
             "name": "zfcampus/zf-apigility-provider",
@@ -1588,6 +1648,62 @@
                 "zf2"
             ],
             "time": "2014-06-04 15:16:49"
+        },
+        {
+            "name": "zfcampus/zf-configuration",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zfcampus/zf-configuration.git",
+                "reference": "32b20ad4003584a1cffbd3145c56018f8210dad1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zfcampus/zf-configuration/zipball/32b20ad4003584a1cffbd3145c56018f8210dad1",
+                "reference": "32b20ad4003584a1cffbd3145c56018f8210dad1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-config": "~2.3",
+                "zendframework/zend-modulemanager": "~2.3",
+                "zendframework/zend-stdlib": "~2.3"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": ">=0.5.4",
+                "phpunit/phpunit": "3.7.*",
+                "zendframework/zend-loader": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev",
+                    "dev-develop": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZF\\Configuration\\": "src/",
+                    "ZFTest\\Configuration\\": "test/"
+                },
+                "classmap": [
+                    "Module.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "ZF2 Module providing REST resource for manipulating configuration",
+            "homepage": "http://apigility.org/",
+            "keywords": [
+                "config",
+                "module",
+                "rest",
+                "zend",
+                "zf2"
+            ],
+            "time": "2014-08-18 16:27:07"
         },
         {
             "name": "zfcampus/zf-content-negotiation",
@@ -1657,16 +1773,16 @@
         },
         {
             "name": "zfcampus/zf-content-validation",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-content-validation.git",
-                "reference": "4188db910044112732c943647151b6af96b57ec0"
+                "reference": "b92e112a3d3920faf08d9f3253764616bd5a4ad2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-content-validation/zipball/4188db910044112732c943647151b6af96b57ec0",
-                "reference": "4188db910044112732c943647151b6af96b57ec0",
+                "url": "https://api.github.com/repos/zfcampus/zf-content-validation/zipball/b92e112a3d3920faf08d9f3253764616bd5a4ad2",
+                "reference": "b92e112a3d3920faf08d9f3253764616bd5a4ad2",
                 "shasum": ""
             },
             "require": {
@@ -1674,7 +1790,7 @@
                 "zendframework/zend-eventmanager": "~2.3",
                 "zendframework/zend-filter": "~2.3",
                 "zendframework/zend-http": "~2.3",
-                "zendframework/zend-inputfilter": "~2.3",
+                "zendframework/zend-inputfilter": "~2.4",
                 "zendframework/zend-mvc": "~2.3",
                 "zendframework/zend-servicemanager": "~2.3",
                 "zendframework/zend-stdlib": "~2.3",
@@ -1690,8 +1806,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "1.1-dev"
+                    "dev-master": "1.1-dev",
+                    "dev-develop": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1715,7 +1831,7 @@
                 "zend",
                 "zf2"
             ],
-            "time": "2015-04-15 17:25:28"
+            "time": "2015-04-16 16:45:50"
         },
         {
             "name": "zfcampus/zf-hal",
@@ -1785,16 +1901,16 @@
         },
         {
             "name": "zfcampus/zf-mvc-auth",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-mvc-auth.git",
-                "reference": "4c0c2451897eefc98db67a73578485edf8ef6760"
+                "reference": "d0b4c25999b79c12840ab122dc5ab886cd4847fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-mvc-auth/zipball/4c0c2451897eefc98db67a73578485edf8ef6760",
-                "reference": "4c0c2451897eefc98db67a73578485edf8ef6760",
+                "url": "https://api.github.com/repos/zfcampus/zf-mvc-auth/zipball/d0b4c25999b79c12840ab122dc5ab886cd4847fd",
+                "reference": "d0b4c25999b79c12840ab122dc5ab886cd4847fd",
                 "shasum": ""
             },
             "require": {
@@ -1809,7 +1925,7 @@
                 "zendframework/zend-stdlib": "~2.3",
                 "zfcampus/zf-api-problem": "~1.0",
                 "zfcampus/zf-content-negotiation": "~1.0",
-                "zfcampus/zf-oauth2": "~1.1"
+                "zfcampus/zf-oauth2": "^1.1.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.*",
@@ -1817,6 +1933,9 @@
                 "zendframework/zend-loader": "~2.3",
                 "zendframework/zend-session": "~2.3"
             },
+            "bin": [
+                "bin/zf-mvc-auth-oauth2-override.php"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1843,20 +1962,20 @@
                 "zend",
                 "zf2"
             ],
-            "time": "2015-04-16 16:42:55"
+            "time": "2015-04-25 16:21:42"
         },
         {
             "name": "zfcampus/zf-oauth2",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-oauth2.git",
-                "reference": "ea789ed8cbec3edc4eba222c0a58e3db99457a5c"
+                "reference": "2695ea45b9815de74437a450f0b082ba21e4aa8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-oauth2/zipball/ea789ed8cbec3edc4eba222c0a58e3db99457a5c",
-                "reference": "ea789ed8cbec3edc4eba222c0a58e3db99457a5c",
+                "url": "https://api.github.com/repos/zfcampus/zf-oauth2/zipball/2695ea45b9815de74437a450f0b082ba21e4aa8a",
+                "reference": "2695ea45b9815de74437a450f0b082ba21e4aa8a",
                 "shasum": ""
             },
             "require": {
@@ -1911,53 +2030,52 @@
                 "oauth2",
                 "zf2"
             ],
-            "time": "2015-04-16 16:39:54"
+            "time": "2015-04-24 17:18:00"
         },
         {
             "name": "zfcampus/zf-rest",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-rest.git",
-                "reference": "c933cf86a9ff3c9a43559ea978cc06df18772405"
+                "reference": "6de6c065658ca9d9b0b5949f7cfad1291b9dfbe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-rest/zipball/c933cf86a9ff3c9a43559ea978cc06df18772405",
-                "reference": "c933cf86a9ff3c9a43559ea978cc06df18772405",
+                "url": "https://api.github.com/repos/zfcampus/zf-rest/zipball/6de6c065658ca9d9b0b5949f7cfad1291b9dfbe9",
+                "reference": "6de6c065658ca9d9b0b5949f7cfad1291b9dfbe9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.23",
-                "zendframework/zend-eventmanager": "~2.3",
-                "zendframework/zend-json": "~2.3",
-                "zendframework/zend-loader": "~2.3",
-                "zendframework/zend-mvc": "~2.3.0",
-                "zendframework/zend-paginator": "~2.3",
-                "zendframework/zend-stdlib": "~2.3",
+                "zendframework/zend-eventmanager": "~2.4",
+                "zendframework/zend-json": "~2.4",
+                "zendframework/zend-loader": "~2.4",
+                "zendframework/zend-mvc": "~2.4",
+                "zendframework/zend-paginator": "~2.4",
+                "zendframework/zend-stdlib": "~2.4",
                 "zfcampus/zf-api-problem": "~1.0",
                 "zfcampus/zf-content-negotiation": "~1.0",
-                "zfcampus/zf-hal": ">=1.0.2,<2.0.0",
-                "zfcampus/zf-mvc-auth": "~1.0",
-                "zfcampus/zf-oauth2": "~1.0"
+                "zfcampus/zf-hal": "~1.1",
+                "zfcampus/zf-mvc-auth": "~1.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.*",
                 "squizlabs/php_codesniffer": "~2.0",
-                "zendframework/zend-console": "~2.3",
-                "zendframework/zend-escaper": "~2.3",
-                "zendframework/zend-http": "~2.3",
-                "zendframework/zend-inputfilter": "~2.3",
-                "zendframework/zend-servicemanager": "~2.3",
-                "zendframework/zend-uri": "~2.3",
-                "zendframework/zend-validator": "~2.3",
-                "zendframework/zend-view": "~2.3"
+                "zendframework/zend-console": "~2.4",
+                "zendframework/zend-escaper": "~2.4",
+                "zendframework/zend-http": "~2.4",
+                "zendframework/zend-inputfilter": "~2.4",
+                "zendframework/zend-servicemanager": "~2.4",
+                "zendframework/zend-uri": "~2.4",
+                "zendframework/zend-validator": "~2.4",
+                "zendframework/zend-view": "~2.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "1.1-dev"
+                    "dev-master": "1.1-dev",
+                    "dev-develop": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1981,7 +2099,7 @@
                 "zend",
                 "zf2"
             ],
-            "time": "2015-03-30 20:23:23"
+            "time": "2015-04-16 16:49:19"
         },
         {
             "name": "zfcampus/zf-rpc",
@@ -2181,12 +2299,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/ZendDeveloperTools.git",
-                "reference": "111b7bc6deee830d9db0016229f184aee92754aa"
+                "reference": "7844297420672a5e5e404493a962a73f735d7bb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/ZendDeveloperTools/zipball/111b7bc6deee830d9db0016229f184aee92754aa",
-                "reference": "111b7bc6deee830d9db0016229f184aee92754aa",
+                "url": "https://api.github.com/repos/zendframework/ZendDeveloperTools/zipball/7844297420672a5e5e404493a962a73f735d7bb0",
+                "reference": "7844297420672a5e5e404493a962a73f735d7bb0",
                 "shasum": ""
             },
             "require": {
@@ -2216,10 +2334,7 @@
             "autoload": {
                 "psr-0": {
                     "ZendDeveloperTools": "src/"
-                },
-                "classmap": [
-                    "./Module.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2244,24 +2359,25 @@
                 "module",
                 "zf2"
             ],
-            "time": "2015-04-06 03:50:15"
+            "time": "2015-04-26 22:28:10"
         },
         {
             "name": "zfcampus/zf-apigility-admin",
-            "version": "1.0.5",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-apigility-admin.git",
-                "reference": "618ce569513c206ee2a866a58fba04f963f83961"
+                "reference": "719bc5f00aa823b5e75883be4099a286b1eb6de7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-apigility-admin/zipball/618ce569513c206ee2a866a58fba04f963f83961",
-                "reference": "618ce569513c206ee2a866a58fba04f963f83961",
+                "url": "https://api.github.com/repos/zfcampus/zf-apigility-admin/zipball/719bc5f00aa823b5e75883be4099a286b1eb6de7",
+                "reference": "719bc5f00aa823b5e75883be4099a286b1eb6de7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.23",
+                "rwoverdijk/assetmanager": "~1.3",
                 "zendframework/zend-code": "~2.3",
                 "zendframework/zend-eventmanager": "~2.3",
                 "zendframework/zend-filter": "~2.3",
@@ -2275,7 +2391,6 @@
                 "zendframework/zend-view": "~2.3",
                 "zfcampus/zf-api-problem": "~1.0",
                 "zfcampus/zf-apigility": "~1.0",
-                "zfcampus/zf-apigility-admin-ui": "~1.0",
                 "zfcampus/zf-apigility-provider": "~1.0",
                 "zfcampus/zf-configuration": "~1.0",
                 "zfcampus/zf-content-negotiation": "~1.0",
@@ -2288,9 +2403,10 @@
                 "zfcampus/zf-versioning": "~1.0"
             },
             "require-dev": {
+                "fabpot/php-cs-fixer": "*@dev",
                 "phpunit/phpunit": "3.7.*",
-                "squizlabs/php_codesniffer": "~2.0",
                 "zendframework/zend-config": "~2.3",
+                "zendframework/zend-console": "~2.3",
                 "zendframework/zend-loader": "~2.3"
             },
             "type": "library",
@@ -2304,6 +2420,9 @@
                 "psr-4": {
                     "ZF\\Apigility\\Admin\\": "src/",
                     "ZFTest\\Apigility\\Admin\\": "test/"
+                },
+                "psr-0": {
+                    "Test\\": "vendor/"
                 },
                 "classmap": [
                     "Module.php"
@@ -2321,111 +2440,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2015-01-28 16:41:54"
-        },
-        {
-            "name": "zfcampus/zf-apigility-admin-ui",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zfcampus/zf-apigility-admin-ui.git",
-                "reference": "8368afb249d9d84df5f9f7ba567d641b8c1ab4dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-apigility-admin-ui/zipball/8368afb249d9d84df5f9f7ba567d641b8c1ab4dd",
-                "reference": "8368afb249d9d84df5f9f7ba567d641b8c1ab4dd",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.23",
-                "rwoverdijk/assetmanager": "~1.3",
-                "zendframework/zend-view": "~2.3"
-            },
-            "require-dev": {
-                "zendframework/zend-console": "~2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev",
-                    "dev-develop": "1.2-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "Module.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Apigility Admin UI module",
-            "homepage": "http://apigility.org/",
-            "keywords": [
-                "api",
-                "apigility",
-                "framework",
-                "zf2"
-            ],
-            "time": "2015-04-21 20:24:30"
-        },
-        {
-            "name": "zfcampus/zf-configuration",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zfcampus/zf-configuration.git",
-                "reference": "32b20ad4003584a1cffbd3145c56018f8210dad1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-configuration/zipball/32b20ad4003584a1cffbd3145c56018f8210dad1",
-                "reference": "32b20ad4003584a1cffbd3145c56018f8210dad1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.23",
-                "zendframework/zend-config": "~2.3",
-                "zendframework/zend-modulemanager": "~2.3",
-                "zendframework/zend-stdlib": "~2.3"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": ">=0.5.4",
-                "phpunit/phpunit": "3.7.*",
-                "zendframework/zend-loader": "~2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ZF\\Configuration\\": "src/",
-                    "ZFTest\\Configuration\\": "test/"
-                },
-                "classmap": [
-                    "Module.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "ZF2 Module providing REST resource for manipulating configuration",
-            "homepage": "http://apigility.org/",
-            "keywords": [
-                "config",
-                "module",
-                "rest",
-                "zend",
-                "zf2"
-            ],
-            "time": "2014-08-18 16:27:07"
+            "time": "2014-08-14 20:32:22"
         },
         {
             "name": "zfcampus/zf-development-mode",

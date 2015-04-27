@@ -15,6 +15,7 @@ return array(
         'ZF\\DevelopmentMode',
         'ZF\\Apigility',
         'ZF\\Apigility\\Provider',
+        'ZF\\Apigility\\Documentation',
         'AssetManager',
         'ZF\\ApiProblem',
         'ZF\\MvcAuth',
@@ -33,7 +34,7 @@ return array(
             './vendor',
         ),
         'config_glob_paths' => array(
-            'config/autoload/{,*.}{global,local}.php'
-        )
-    )
+            'config/autoload/{,*.}{global,local}.php',
+        ),
+    ),
 );

@@ -3,26 +3,21 @@
   "description" : "Skeleton User Application for ZF2",
   "require" : {
     "php" : ">=5.3.3",
-    "zendframework/zendframework"      : "2.3.*",
+    "zendframework/zendframework" : ">=2.3.2,<3.0.0",
     "zf-commons/zfc-user-doctrine-orm" : "=1.0.0",
-    "zf-commons/zfc-user"              : "=1.2.2",
+    "zf-commons/zfc-user" : "=1.2.2",
     "doctrine/doctrine-orm-module" : "=0.8.0",
-    "zfcampus/zf-apigility"        : "1.0.*"
+    "zfcampus/zf-apigility" : "1.0.1",
+    "zfcampus/zf-apigility-documentation" : "~1.0"
   },
-  "require-dev": {
-    "zendframework/zend-developer-tools": "dev-master",
-  	"zfcampus/zf-apigility-admin"  : "1.0.*",
-  	"zfcampus/zf-development-mode" : "2.0.*",
-  	"squizlabs/php_codesniffer"    : "1.4.*"
+  "require-dev" : {
+    "zendframework/zend-developer-tools" : "dev-master",
+    "zfcampus/zf-apigility-admin" : "=1.0.4",
+    "zfcampus/zf-development-mode" : "2.0.*",
+    "squizlabs/php_codesniffer" : "1.4.*"
   },
   "license" : "BSD-3-Clause",
-  "keywords" : [
-  	"framework",
-  	"zf2",
-  	"zfc-user",
-  	"zf-commons",
-  	"apigility"
-  ],
+  "keywords" : [ "framework", "zf2", "zfc-user", "zf-commons", "apigility" ],
   "authors" : [ {
     "name" : "Dolly Aswin",
     "email" : "dolly.aswin@gmail.com"
